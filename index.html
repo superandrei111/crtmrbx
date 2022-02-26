@@ -1,612 +1,136 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
-   <head>
-      <meta charset="utf-8">
-      <meta content="César" name="author">
-      <meta content="Estaciones y simuladores de CRTMRBX" name="description">
-      <meta content="Metro de Madrid, Cercanías Madrid, Metro Ligero de Madrid, Trenes de Madrid, TrenesMadrid" name="keywords">
-      <title>CRTM RBX</title>
-      <link rel="icon" type="image/png" href="../images/consorio_transportes_madrid.png" />
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <style>
-         body {
-         font-family: Helvetica, sans-serif;
-         }
-         .dropbtn {
-         background-color: red;
-         color: white;
-         padding: 16px;
-         font-size: 16px;
-         border: none;
-         cursor: pointer;
-         }
-         .dropbtn:hover, .dropbtn:focus {
-         background-color: #C20202;
-         }
-         #myInput {
-         box-sizing: border-box;
-         background-image: url('searchicon.png');
-         background-position: 14px 12px;
-         background-repeat: no-repeat;
-         font-size: 16px;
-         padding: 14px 20px 12px 45px;
-         border: none;
-         border-bottom: 1px solid #ddd;
-         }
-         #myInput:focus {outline: 3px solid #ddd;}
-         .dropdown {
-         position: relative;
-         display: inline-block;
-         }
-         .dropdown-content {
-         display: none;
-         position: absolute;
-         background-color: white;
-         min-width: 230px;
-         overflow: hidden;
-         border: 1px solid #ddd;
-         z-index: 1;
-         }
-         .dropdown-content a {
-         color: black;
-         padding: 12px 16px;
-         text-decoration: none;
-         display: block;
-         }
-         .dropdown a:hover {background-color: #ddd;}
-         .show {display: block;}
-         table, th, td {
-         border: 1px solid black;
-         bordercollapse:collapse;
-         }
-         
-         
-         .card1 {
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
-img {
-  border-radius: 5px 5px 0 0;
-}
-
-.container {
-  padding: 2px 16px;
-}
-* {
-  box-sizing: border-box;
-}
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
-.row {margin: 0 -5px;}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media screen and (max-width: 600px) {
-  .column {
-    width: 50%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-@media screen and (max-width: 300px) {
-  .column {
-    width: 100%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-@media screen and (min-width: 600px) {
-  .column {
-    width: 25%;
-    display: block;
-    margin-bottom: 20px;
-  }
-}
-      </style>
-   </head>
-   <body>
-      <center>
-         <h1>Estaciones oficiales de CRTM RBX Edition</h1>
-         <h3>Lista de estaciones oficiales</h3>
-         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">Buscar estación...</button>
-            <div id="myDropdown" class="dropdown-content">
-               <input type="text" placeholder="Escribe..." id="myInput" onkeyup="filterFunction()">
-     <a href=http://bit.ly/pinarchamartin style="color:red" target="_blank">Pinar de Chamartín</a>
-     <a href=http://bit.ly/sancristobalrbx style="color:red" target="_blank">San Cristóbal</a>
-     <a href=http://bit.ly/juandelacierva style="color:red" target="_blank">Juan de la Cierva</a>
-     <a href=http://bit.ly/campamentorbx style="color:red" target="_blank">Campamento</a>
-     <a href=http://bit.ly/principepio style="color:red" target="_blank">Príncipe pío</a>
-     <a href=http://bit.ly/alonsomartinez style="color:red" target="_blank">Alonso Martínez</a>
-     <a href=http://bit.ly/ibizarbx style="color:red" target="_blank">Ibiza</a>
-    
-     <a href=http://bit.ly/quevedorbx style="color:red" target="_blank">Quevedo</a>
-     <a href=http://bit.ly/arguellesrbx style="color:red" target="_blank">Argüelles</a>
-     <a href=http://bit.ly/pacodeluciarbx style="color:red" target="_blank">Paco de Lucía</a>
-     <a href=http://bit.ly/buenosairesrbx style="color:red" target="_blank">Buenos Aires</a>
-     <a href=http://bit.ly/legazpirbx style="color:red" target="_blank">Legazpi</a>
-     <a href=http://bit.ly/sevillarbx style="color:red" target="_blank">Sevilla</a>
-     <a href=http://bit.ly/lagorbx style="color:red" target="_blank">Lago</a>
-    
-     <a href=http://bit.ly/arganzuelaplanetario style="color:red" target="_blank">Arganzuela-planetario</a>
-     <a href=http://bit.ly/pueblonuevorbx style="color:red" target="_blank">Pueblo Nuevo</a>
-     <a href=http://bit.ly/plazadeespa%C3%B1a-noviciado style="color:red" target="_blank">Plaza de España/Noviciado</a>
-     <a href=https://www.roblox.com/games/4933938423/Las-Suertes-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Las Suertes</a>
-     <a href=https://web.roblox.com/games/4288695000/Villaverde-Alto-3-0-CRTM-RBX-Edition style="color:red" target="_blank">Villaverde Alto</a>
-     <a href=https://web.roblox.com/games/4943612709/La-P-eseta-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">La Peseta</a>
-     <a href=https://web.roblox.com/games/5120676564/Ja-rama-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Jarama</a>
-    
-     <a href=https://www.roblox.com/games/5213012485 style="color:red" target="_blank">Rivas Vaciamadrid</a>
-     <a href=https://web.roblox.com/games/5129609053/Hospital-del-Hen-ares-Metro-Madrid-RBX-Edition#!/about style="color:red" target="_blank">Hospital del Henares</a>
-     <a href=https://web.roblox.com/games/5186110886/Palos-de-la-Frontera-Metro-Madrid-RBX-Edition style="color:red" target="_blank">Palos de la frontera</a>
-     <a href=https://web.roblox.com/games/5291823057 style="color:red" target="_blank">Eugenia de montijo (Mad)</a>
-     <a href=https://web.roblox.com/games/5266195190/Eugenia-de-Mon-ti-jo-Metro-Madrid-RBX-Edition style="color:red" target="_blank">Eugenia de Montijo (Alfredo)</a>
-     <a href=https://web.roblox.com/games/5449546125/Maria-Tudor-CRTM-1-A-o-RBX-Edition style="color:red" target="_blank">María Tudor</a>
-     <a href=https://web.roblox.com/games/5498452741/Virgen-del-Cortijo-Metro-Madrid-RBX-Edition style="color:red" target="_blank">Virgen del Cortijo</a>
-    
-     <a href=https://web.roblox.com/games/5242566185/San-Francisco-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">San Francisco</a>
-     <a href=https://web.roblox.com/games/5305021076/Cons-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Conservatorio</a>
-     <a href=https://web.roblox.com/games/5316234298/Reta-mares-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Retamares</a>
-     <a href=https://web.roblox.com/games/5427791958/Blas-co-I-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Blasco Ibañez</a>
-     <a href=https://web.roblox.com/games/5448723189/Ven-torro-del-Ca-no-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Ventorro del Cano</a>
-     <a href=https://www.roblox.com/games/5603063580/Ve-laz-quez-Showcase-Metro-de-madrid style="color:red" target="_blank">Velázquez</a>
-     <a href=https://www.roblox.com/games/5274299479/Alameda-de-Osuna-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Alameda de Osuna</a>
-    
-     <a href=https://www.roblox.com/games/5776497010/Dos-Castillas-CRTM-RBX-EDITION style="color:red" target="_blank">Dos Castillas</a>
-     <a href=https://web.roblox.com/games/5691176605/C-Jard-n-Metro-de-Madrid-RBX-Edition style="color:red" target="_blank">Colonia Jardín</a>
-            </div>
-         </div>
-      </center>
-      <br><br>
-      <script>
-         function myFunction() {
-           document.getElementById("myDropdown").classList.toggle("show");
-         }
-         
-         function filterFunction() {
-           var input, filter, ul, li, a, i;
-           input = document.getElementById("myInput");
-           filter = input.value.toUpperCase();
-           div = document.getElementById("myDropdown");
-           a = div.getElementsByTagName("a");
-           for (i = 0; i < a.length; i++) {
-             txtValue = a[i].textContent || a[i].innerText;
-             if (txtValue.toUpperCase().indexOf(filter) > -1) {
-               a[i].style.display = "";
-             } else {
-               a[i].style.display = "none";
-             }
-           }
-         }
-      </script>
-      <div class="row">
-      <div class="column">
-      <div class="card1">
-
-      <img src="" alt="Pinar de Chamartin" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/727647646/Pinar-de-Chamart-n-Metro-de-Madrid-Rbx-Edition%22%3E">Pinar de Chamartin</a></h4> 
-      <p>Creado por Superandrei1111</p> 
-      </div>
-      </div>
-      </div>
-
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="San Cristóbal" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3738015658/Estaci-n-San-Crist-bal-Metro-Madrid-RBX-Edition">San Cristóbal</a></h4> 
-      <p>Creado por CesarYoshi</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Juan de la Cierva" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3735403393/Juan-de-la-Cierva-1-8">Juan de la Cierva</a></h4> 
-      <p>Creado por Xxpro11x</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874578198971691008/Campamento.png?width=676&height=676" alt="Campamento" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/867049012/Campamento-Metro-de-Madrid-RBX-Edition">Campamento</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Principe Pío" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/2376783109/Principe-Pio-Metro-de-Madrid-RBX-Edition">Principe Pío</a></h4> 
-      <p>Creado por MiguelGamer835</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233123720806420/Logo_Alonso_Martinez.png" alt="Alonso Martínez" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3837381032/Alonso-Martinez-Metro-de-Madrid-RBX-Edition">Alonso Martínez</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233259033239562/Logo_Ibiza.png" alt="Ibiza" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3887522094/Ibiza-Metro-de-Madrid-Rbx-edition">Ibiza</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233344064376852/Logo_Quevedo.png" alt="Quevedo" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3939118467/Quevedo-Metro-de-Madrid-rbx-edition#!/about">Quevedo</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233424007819264/Logo_Arguelles.png" alt="Argüelles" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/3984750560/Arg-elles-Metro-de-Madrid-Rbx-edition">Argüelles</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233513904308244/Logo_Paco_de_Lucia.png" alt="Paco de Lucía" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4070123490/Paco-de-Luc-a-Metro-de-Madrid-Rbx-edition">Paco de Lucía</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233603524010004/Logo_Buenos_Aires.png" alt="Buenos Aires" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4163970800/Buenos-Aires-Metro-de-Madrid-Rbx-edition">Buenos Aires</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Legazpi" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4184232020/Legazpi-Linea-3-6-Pre-Alpha-M-Madrid-RBX-Edition">Legazpi</a></h4> 
-      <p>Creado por nicoxander7</p> 
-      </div>
-      </div>
-      </div>
-      
-      <div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233687158431754/Logo_Sevilla.png" alt="Sevilla" style="width:100%">
-      <div class="container">
-      <h4><a href="http://bit.ly/sevillarbx">Sevilla</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233788182458428/Logo_Lago.png" alt="Lago" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4259129857/Lago-Metro-de-Madrid-Rbx-edition">Lago</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233867760967720/Logo_Arganzuela-Planetario.png" alt="Arganzuela-Planetario" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4342219153/Arganzuela-Planetario-Metro-de-Madrid-Rbx-edition">Arganzuela-Planetario</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874233937357054032/Logo_Pueblo_Nuevo.png" alt="Pueblo Nuevo" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4405699002/Pueblo-Nuevo-metro-de-madrid-Rbx-edition">Pueblo Nuevo</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874234021155049532/Logo_Plaza_de_Espana_y_Noviciado.png" alt="Plaza de España/Noviciado" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4509919750/Pl-Esp-Noviciado-metro-de-madrid-Rbx-edition">Plaza de España/Noviciado</a></h4> 
-      <p>Creado por Eloy99999999</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874643853985071164/Suertes.png?width=676&height=676" alt="Las Suertes" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4933938423/Las-Suertes-Metro-de-Madrid-RBX-Edition">Las Suertes</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Villaverde Alto" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4288695000/Villaverde-Alto-3-0-CRTM-RBX-Edition">Villaverde Alto</a></h4> 
-      <p>Creado por tranviablanco</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="La Peseta" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/4943612709/La-P-eseta-Metro-de-Madrid-RBX-Edition">La Peseta</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Jarama" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5120676564/Ja-rama-Metro-de-Madrid-RBX-Edition">Jarama</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Rivas Vaciamadrid" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5213012485/Ri-vas-Vacia-madrid-Metro-Madrid-RBX-Edition">Rivas Vaciamadrid</a></h4> 
-      <p>Creado por MadInTheTopHat</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Hospital del Henares" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5129609053/Hospital-del-Hen-ares-Metro-Madrid-RBX-Edition#!/about">Hospital del Henares</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874406674457296906/Palos_Frontera.png?width=676&height=676" alt="Palos de la Frontera" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5186110886/Palos-de-la-Frontera-Metro-Madrid-RBX-Edition">Palos de la Frontera</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Eugenia de Montijo (Mad)" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5291823057/Eu-genia-de-Mon-ti-jo-Metro-de-Madrid-RBX-Edition">Eugenia de Montijo (Mad)</a></h4> 
-      <p>Creado por MadInTheTopHat</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874580195305209886/Eugenia_Montijo.png?width=676&height=676" alt="Eugenia de Montijo (Alfredo)" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5266195190/Eugenia-de-Mon-ti-jo-Metro-Madrid-RBX-Edition">Eugenia de Montijo (Alfredo)</a></h4> 
-      <p>Creado por ItzAlfredoYT</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="María Tudor" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5449546125/Maria-Tudor-CRTM-1-A-o-RBX-Edition">María Tudor</a></h4> 
-      <p>Creado por tranviablanco</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Virgen del Cortijo" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5498452741/Virgen-del-Cortijo-Metro-Madrid-RBX-Edition">Virgen del Cortijo</a></h4> 
-      <p>Creado por MadInTheTopHat</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="San Francisco" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5242566185/San-Francisco-Metro-de-Madrid-RBX-Edition">San Francisco</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Conservatorio" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5305021076/Cons-Metro-de-Madrid-RBX-Edition">Conservatorio</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Retamares" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5316234298/Reta-mares-Metro-de-Madrid-RBX-Edition">Retamares</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Blasco Ibáñez" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5427791958/Blas-co-I-Metro-de-Madrid-RBX-Edition">Blasco Ibáñez</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Ventorro del Cano" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5448723189/Ven-torro-del-Ca-no-Metro-de-Madrid-RBX-Edition">Ventorro del Cano</a></h4> 
-      <p>Creado por amicdelbus1</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Velázquez" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5603063580/Ve-laz-quez-Showcase-Metro-de-madrid">Velázquez</a></h4> 
-      <p>Creado por Elguay_YT</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="https://media.discordapp.net/attachments/874031751431852043/874642095510552576/Alameda_Osuna.png?width=676&height=676" alt="Alameda de Osuna" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5274299479/Alameda-de-Osuna-Metro-de-Madrid-RBX-Edition">Alameda de Osuna</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Dos Castillas" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5776497010/Dos-Castillas-CRTM-RBX-EDITION">Dos Castillas</a></h4> 
-      <p>Creado por MadInTheTopHat</p> 
-      </div>
-      </div>
-      </div>
-
-<div class="column">
-      <div class="card1">
-
-      <img src="" alt="Colonia Jardin" style="width:100%">
-      <div class="container">
-      <h4><a href="https://www.roblox.com/games/5691176605/C-Jard-n-Metro-de-Madrid-RBX-Edition">Colonia Jardin</a></h4> 
-      <p>Creado por ItzAlfredoGD</p> 
-      </div>
-      </div>
-      </div>
-      
-      </div>
-      
-      
-      
-     
-      </body>
+	<head>
+		<title>C5 SIM</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	</head>
+	<body class="is-preload">
+
+		<!-- Page Wrapper -->
+			<div id="page-wrapper">
+
+				<!-- Header -->
+					<header id="header" class="alt">
+						<h1><a href="index.html">C5 MADRID SIMULATOR</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Inicio</a></li>
+								<li><a href="https://blog.c5sim.com/">Blog</a></li>
+								<li><a href="generic copy 4.html">Trenes y Estaciones</a></li>
+								<li><a href="generic copy 3.html">Preguntas Frecuentes</a></li>
+								<li><a href="generic copy.html">Desarrolladores y donaciones</a></li>
+								<li><a href="generic copy 2.html">Contacto</a></li>
+								<li><a href="https://www.roblox.com/games/7203930201/C-5-Madrid-Simulator?#!/about">Ir al juego</a></li>
+							</ul>
+							<a href="#" class="close">Cerrar</a>
+						</div>
+					</nav>
+
+				<!-- Banner -->
+					<section id="banner">
+						<div class="inner">
+							<h2>C5 MADRID SIMULATOR</h2>
+							<p>La línea C-5 de Madrid, recreada al detalle en Roblox</p>
+						</div>
+					</section>
+
+				<!-- Wrapper -->
+					<section id="wrapper">
+
+						<!-- One -->
+							<section id="one" class="wrapper spotlight style1">
+								<div class="inner">
+									<a href="generic copy 4.html" class="image"><img src="images/pic01.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Conduce auténticos trenes de Cercanías</h2>
+										<p>El rol principal en el simulador es conducir, y en la primera fase lo podrás hacer a bordo de dos magníficas unidades: la veterana UT-446, con un rendimiento magnífico y unas características adelantadas a su época, y la mítica UT-440, en sus colores originales, para recrear los históricos inicios de esta línea.</p>
+										<a href="generic copy 4.html" class="special">Saber más</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Two -->
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<a href="generic copy 4.html" class="image"><img src="images/pic02.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Viaja como si estuvieras allí</h2>
+										<p>¿No te va conducir? ¿Quieres relajarte un rato? Los jugadores tienen la capacidad de visitar las estaciones, recreadas al detalle, y montarse en los trenes como pasajeros.</p>
+										<a href="generic copy 4.html" class="special">Saber más</a>
+									</div>
+								</div>
+							</section>
+
+						<!-- Three -->
+							<section id="three" class="wrapper spotlight style3">
+								<div class="inner">
+									<a href="generic copy 4.html" class="image"><img src="images/pic03.png" alt="" /></a>
+									<div class="content">
+										<h2 class="major">Interactúa con otros jugadores</h2>
+										<p>El juego es multijugador por defecto, por lo que puedes jugar con tus amigos, coordinarte con el resto de conductores, y en definitiva, disfrutar de un simulador ferroviario como nunca lo has hecho antes.</p>
+										
+									</div>
+									
+								</div>
+								
+							</section>
+
+							<section id="two" class="wrapper alt spotlight style2">
+								<div class="inner">
+									<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/uvhq2h7sT5E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								</div>
+							</section>
+
+						<!-- Four -->
+							
+				<!-- Footer -->
+					<section id="footer">
+						<div class="inner">
+							<h2 class="major">En Resumen</h2>
+							<p>C-5 Madrid Simulator es un ambicioso proyecto de mas de un año de desarrollo en el que se ha recreado la línea C-5 de Cercanías Madrid en Roblox para poder experimentar su conducción en primera persona.</p>
+							<a href="https://www.roblox.com/games/7203930201/C-5-Madrid-Simulator?#!/about" class="button large">CLICK PARA IR AL JUEGO</a>
+							<br>
+							<ul class="contact">
+								<br>
+								<li class="icon brands fa-discord">
+									<a href="https://discord.gg/nUVu9PN">Discord</a>
+								</li>
+								<li class="icon brands fa-twitter"><a href="https://twitter.com/superandrei111">Twitter</a></li>
+								<li class="icon brands fa-youtube"><a href="https://www.youtube.com/channel/UC-cvUhdnd_Ks5v7JA2UM2KA">Youtube</a></li>
+								<li class="icon brands fa-twitch"><a href="https://www.twitch.tv/superandrei111">Twitch</a></li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; CRTM RBX EDITION. Todos los derechos reservados. Esta página no almacena cookies personales.</li>
+							</ul>
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
 </html>
